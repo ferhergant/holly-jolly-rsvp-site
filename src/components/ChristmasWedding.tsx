@@ -123,8 +123,8 @@ const ChristmasWedding = () => {
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-christmas-gold to-transparent mx-auto mb-6"></div>
             
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              En esta época de amor y celebración, queremos compartir con ustedes 
-              el momento más especial de nuestras vidas. Únanse a nosotros en una 
+              En esta época de amor y celebración, queremos compartir con vosotros 
+              el momento más especial de nuestras vidas. Uníos a nosotros en una 
               boda navideña llena de magia, amor y alegría.
             </p>
             
