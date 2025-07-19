@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				christmas: {
+					forest: 'hsl(var(--forest-green))',
+					gold: 'hsl(var(--warm-gold))',
+					champagne: 'hsl(var(--champagne))',
+					burgundy: 'hsl(var(--burgundy))',
+					snow: 'hsl(var(--snow-white))',
+					pine: 'hsl(var(--pine-needle))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
