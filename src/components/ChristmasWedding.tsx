@@ -108,9 +108,9 @@ const ChristmasWedding = () => {
             </div>
             
             <h1 className="text-6xl font-serif text-christmas-forest mb-4">
-              Carlos
+              Rocío
               <span className="block text-4xl font-light my-2">&</span>
-              María
+              Jorge
             </h1>
             
             <div className="flex items-center justify-center gap-2 mb-6">
@@ -307,7 +307,7 @@ const ChristmasWedding = () => {
               </p>
               <div className="flex justify-center mt-4 gap-2">
                 <Heart className="w-4 h-4 text-christmas-burgundy" />
-                <span className="text-christmas-forest font-serif">Carlos & María</span>
+                <span className="text-christmas-forest font-serif">Rocío & Jorge</span>
                 <Heart className="w-4 h-4 text-christmas-burgundy" />
               </div>
             </div>
