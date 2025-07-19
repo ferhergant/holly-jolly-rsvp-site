@@ -166,26 +166,48 @@ const ChristmasWedding = () => {
         {/* Timeline */}
         <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30">
           <CardContent className="p-8">
-            <h2 className="text-3xl font-serif text-center text-christmas-forest mb-8">
+            <h2 className="text-3xl font-serif text-center text-christmas-forest mb-12">
               Cronograma Navideño
             </h2>
             
-            <div className="grid gap-6 max-w-2xl mx-auto">
+            <div className="relative max-w-md mx-auto">
+              {/* Vertical line */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-christmas-burgundy transform -translate-x-1/2"></div>
+              
               {timelineEvents.map((event, index) => {
                 const IconComponent = event.icon;
                 return (
-                  <div key={index} className="flex items-center gap-6 p-4 rounded-lg bg-christmas-champagne/50">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-full bg-christmas-forest flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-christmas-gold" />
+                  <div key={index} className="relative mb-12 last:mb-0">
+                    {/* Red dot on the line */}
+                    <div className="absolute left-1/2 top-6 w-3 h-3 bg-christmas-burgundy rounded-full transform -translate-x-1/2 z-10"></div>
+                    
+                    {/* Content alternating sides */}
+                    <div className={`flex items-start ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                      {/* Icon and time side */}
+                      <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                        <div className="mb-2">
+                          <IconComponent className="w-8 h-8 text-christmas-forest mx-auto" style={{
+                            filter: 'drop-shadow(1px 1px 0px rgba(0,0,0,0.1))',
+                            transform: 'rotate(-5deg)'
+                          }} />
+                        </div>
+                        <div className="text-2xl font-bold text-christmas-forest mb-1">{event.time}</div>
                       </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-1">
-                        <span className="text-2xl font-bold text-christmas-forest">{event.time}</span>
-                        <span className="text-xl font-serif text-christmas-forest">{event.event}</span>
+                      
+                      {/* Event details side */}
+                      <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8 text-left' : 'pr-8 text-right'}`}>
+                        <h3 className="text-xl font-serif text-christmas-forest mb-2" style={{
+                          transform: 'rotate(1deg)',
+                          transformOrigin: 'center'
+                        }}>
+                          {event.event}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed" style={{
+                          transform: 'rotate(-0.5deg)'
+                        }}>
+                          {event.description}
+                        </p>
                       </div>
-                      <p className="text-muted-foreground">{event.description}</p>
                     </div>
                   </div>
                 );
