@@ -39,17 +39,24 @@ const ChristmasWedding = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/functions/v1/submit-rsvp', {
-        method: "POST",
+      // Using Pipedream endpoint
+      const response = await fetch('https://eolpxah866aycv0.m.pipedream.net', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          companion: formData.companion,
+          transport: formData.transport,
+          allergies: formData.allergies,
+          attending: formData.attending,
+          subject: `RSVP de ${formData.name} - Boda Rocío & Jorge`,
+          timestamp: new Date().toISOString(),
+        }),
       });
 
-      const result = await response.json();
-
-      if (result.success) {
+      if (response.ok) {
         toast({
           title: "¡Confirmación enviada!",
           description: "Gracias por confirmar tu asistencia a nuestra boda navideña.",
@@ -64,7 +71,7 @@ const ChristmasWedding = () => {
           attending: ''
         });
       } else {
-        throw new Error(result.error || 'Error al enviar confirmación');
+        throw new Error('Error al enviar confirmación');
       }
     } catch (error) {
       console.error("Error enviando confirmación:", error);
