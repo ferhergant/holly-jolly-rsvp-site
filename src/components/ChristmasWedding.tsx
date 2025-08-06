@@ -18,17 +18,67 @@ const ChristmasWedding = () => {
     allergies: '',
     attending: ''
   });
+  const [webhookUrl, setWebhookUrl] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "¡Confirmación recibida!",
-      description: "Gracias por confirmar tu asistencia a nuestra boda navideña.",
-    });
+    
+    if (!webhookUrl) {
+      toast({
+        title: "Error",
+        description: "Por favor ingresa la URL de tu webhook de Pipedream",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    console.log("Enviando datos a Pipedream:", webhookUrl);
+
+    try {
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          event: "Christmas Wedding RSVP",
+          couple: "Rocío & Jorge",
+          date: "23 de Diciembre, 2024"
+        }),
+      });
+
+      toast({
+        title: "¡Confirmación enviada!",
+        description: "Gracias por confirmar tu asistencia. Los datos han sido enviados a Pipedream.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        companion: '',
+        transport: '',
+        allergies: '',
+        attending: ''
+      });
+    } catch (error) {
+      console.error("Error enviando a Pipedream:", error);
+      toast({
+        title: "Error",
+        description: "No se pudo enviar la confirmación. Verifica la URL del webhook.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const timelineEvents = [
@@ -255,6 +305,20 @@ const ChristmasWedding = () => {
             
             <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
               <div>
+                <Label htmlFor="webhookUrl" className="text-christmas-forest font-medium">
+                  URL de Webhook de Pipedream
+                </Label>
+                <Input
+                  id="webhookUrl"
+                  value={webhookUrl}
+                  onChange={(e) => setWebhookUrl(e.target.value)}
+                  className="mt-1 border-christmas-gold/50 focus:border-christmas-forest"
+                  placeholder="https://your-pipedream-endpoint.m.pipedream.net"
+                  type="url"
+                />
+              </div>
+
+              <div>
                 <Label htmlFor="name" className="text-christmas-forest font-medium">
                   Nombre y Apellidos
                 </Label>
@@ -317,9 +381,10 @@ const ChristmasWedding = () => {
 
               <Button 
                 type="submit" 
-                className="w-full bg-christmas-forest hover:bg-christmas-pine text-christmas-champagne text-lg py-3"
+                disabled={isLoading}
+                className="w-full bg-christmas-forest hover:bg-christmas-pine text-christmas-champagne text-lg py-3 disabled:opacity-50"
               >
-                Confirmar Asistencia 🎄
+                {isLoading ? 'Enviando...' : 'Confirmar Asistencia 🎄'}
               </Button>
             </form>
 
