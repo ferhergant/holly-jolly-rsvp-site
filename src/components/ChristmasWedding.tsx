@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useToast } from '@/hooks/use-toast';
 import { Heart, TreePine, Snowflake, Bell, Calendar, MapPin, Clock, Star } from 'lucide-react';
-import christmasIllustrations from '@/assets/christmas-wedding-illustrations.png';
+// using uploaded illustration path
 
 const ChristmasWedding = () => {
   const { toast } = useToast();
@@ -184,9 +184,10 @@ const ChristmasWedding = () => {
             
             <div className="mt-8">
               <img 
-                src={christmasIllustrations} 
-                alt="Christmas Wedding Illustrations" 
-                className="w-64 h-auto mx-auto opacity-60"
+                src="/lovable-uploads/0f9d8a23-0e35-4cb1-9018-9103e40e769d.png" 
+                alt="Ilustración nupcial en lazo rojo"
+                className="w-64 h-auto mx-auto opacity-90"
+                loading="lazy"
               />
             </div>
           </CardContent>
