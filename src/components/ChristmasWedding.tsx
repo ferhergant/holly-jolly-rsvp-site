@@ -157,20 +157,19 @@ const ChristmasWedding = () => {
         {/* Hero Section */}
         <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30 shadow-[var(--shadow-warm)]">
           <CardContent className="p-12 text-center">
-            <div className="flex justify-center mb-6">
+            <div className="flex flex-col items-center justify-center mb-6 gap-4 sm:flex-row sm:gap-8">
               <img
                 src="/lovable-uploads/7f1282cc-1be3-40a4-bb20-2e04798854fc.png"
                 alt="Ilustración: árbol de Navidad con mesas"
-                className="w-40 h-auto opacity-90"
+                className="h-24 sm:h-28 md:h-32 w-auto object-contain opacity-90"
                 loading="lazy"
               />
+              <h1 className="text-5xl sm:text-6xl font-serif text-christmas-forest text-center sm:text-left">
+                Rocío
+                <span className="block text-3xl sm:text-4xl font-light my-2">&</span>
+                Jorge
+              </h1>
             </div>
-            
-            <h1 className="text-6xl font-serif text-christmas-forest mb-4">
-              Rocío
-              <span className="block text-4xl font-light my-2">&</span>
-              Jorge
-            </h1>
             
             <div className="flex items-center justify-center gap-2 mb-6">
               <Calendar className="w-5 h-5 text-christmas-burgundy" />
