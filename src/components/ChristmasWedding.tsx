@@ -158,7 +158,12 @@ const ChristmasWedding = () => {
         <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30 shadow-[var(--shadow-warm)]">
           <CardContent className="p-12 text-center">
             <div className="flex justify-center mb-6">
-              <TreePine className="w-12 h-12 text-christmas-forest" />
+              <img
+                src="/lovable-uploads/7f1282cc-1be3-40a4-bb20-2e04798854fc.png"
+                alt="Ilustración: árbol de Navidad con mesas"
+                className="w-40 h-auto opacity-90"
+                loading="lazy"
+              />
             </div>
             
             <h1 className="text-6xl font-serif text-christmas-forest mb-4">
@@ -184,8 +189,8 @@ const ChristmasWedding = () => {
             
             <div className="mt-8">
               <img 
-                src="/lovable-uploads/0f9d8a23-0e35-4cb1-9018-9103e40e769d.png" 
-                alt="Ilustración nupcial en lazo rojo"
+                src="/lovable-uploads/295a24de-dc84-42b8-8853-477084fb8438.png" 
+                alt="Lazo rojo nupcial"
                 className="w-64 h-auto mx-auto opacity-90"
                 loading="lazy"
               />
@@ -193,25 +198,17 @@ const ChristmasWedding = () => {
           </CardContent>
         </Card>
 
-        {/* Location Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <Card className="bg-gradient-to-br from-christmas-forest to-christmas-pine text-christmas-champagne border-christmas-gold/30">
-            <CardContent className="p-8 text-center">
-              <Bell className="w-8 h-8 mx-auto mb-4 text-christmas-gold" />
-              <h3 className="text-2xl font-serif mb-2">CEREMONIA</h3>
-              <h4 className="text-xl mb-4">Iglesia San Nicolás</h4>
-              <Button variant="outline" className="border-christmas-gold text-christmas-gold hover:bg-christmas-gold hover:text-christmas-forest">
-                ¿CÓMO LLEGAR?
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-br from-christmas-burgundy to-accent text-christmas-champagne border-christmas-gold/30">
-            <CardContent className="p-8 text-center">
-              <Heart className="w-8 h-8 mx-auto mb-4 text-christmas-gold" />
-              <h3 className="text-2xl font-serif mb-2">CELEBRACIÓN</h3>
-              <h4 className="text-xl mb-4">Palacio Invernal</h4>
-              <Button variant="outline" className="border-christmas-gold text-christmas-gold hover:bg-christmas-gold hover:text-christmas-burgundy">
+        {/* Celebration Card */}
+        <div className="mb-12">
+          <Card className="bg-accent/10 border-accent/30">
+            <CardContent className="p-10 text-center">
+              <Heart className="w-8 h-8 mx-auto mb-4 text-accent" />
+              <h3 className="text-2xl font-serif mb-2 text-foreground">CELEBRACIÓN</h3>
+              <h4 className="text-xl mb-4 text-muted-foreground">Palacio Invernal</h4>
+              <Button
+                variant="outline"
+                className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
+              >
                 ¿CÓMO LLEGAR?
               </Button>
             </CardContent>
