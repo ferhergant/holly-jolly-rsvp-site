@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useToast } from '@/hooks/use-toast';
 import { Heart, TreePine, Snowflake, Bell, Calendar, MapPin, Clock, Star } from 'lucide-react';
+import titleImage from '../assets/title.png';
 // using uploaded illustration path
 
 const ChristmasWedding = () => {
@@ -89,25 +90,25 @@ const ChristmasWedding = () => {
     {
       time: "16:30h",
       event: "Ceremonia",
-      icon: Bell,
+      image: "/lovable-uploads/0f9d8a23-0e35-4cb1-9018-9103e40e769d.png",
       description: "Iglesia San Nicolás"
     },
     {
       time: "18:00h", 
       event: "Cóctel Navideño",
-      icon: Star,
+      image: "/lovable-uploads/295a24de-dc84-42b8-8853-477084fb8438.png",
       description: "Jardines del Palacio"
     },
     {
       time: "20:30h",
       event: "Cena",
-      icon: Heart,
+      image: "/lovable-uploads/7f1282cc-1be3-40a4-bb20-2e04798854fc.png",
       description: "Salón Principal"
     },
     {
       time: "23:00h",
       event: "Fiesta de Nochebuena",
-      icon: TreePine,
+      image: "/lovable-uploads/0f9d8a23-0e35-4cb1-9018-9103e40e769d.png",
       description: "¡Hasta el amanecer!"
     }
   ];
@@ -157,59 +158,47 @@ const ChristmasWedding = () => {
         {/* Hero Section */}
         <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30 shadow-[var(--shadow-warm)]">
           <CardContent className="p-12 text-center">
-            <div className="flex flex-col items-center justify-center mb-6 gap-4 sm:flex-row sm:gap-8">
-              <img
-                src="/lovable-uploads/7f1282cc-1be3-40a4-bb20-2e04798854fc.png"
-                alt="Ilustración: árbol de Navidad con mesas"
-                className="h-24 sm:h-28 md:h-32 w-auto object-contain opacity-90"
+
+          <div className="mt-8">
+              <img 
+                src={titleImage} 
+                alt="Titulo"
+                className="w-full max-w-2xl mx-auto opacity-90"
                 loading="lazy"
               />
-              <h1 className="text-5xl sm:text-6xl font-serif text-christmas-forest text-center sm:text-left">
-                Rocío
-                <span className="block text-3xl sm:text-4xl font-light my-2">&</span>
-                Jorge
-              </h1>
-            </div>
-            
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Calendar className="w-5 h-5 text-christmas-burgundy" />
-              <p className="text-xl text-christmas-forest font-medium">
-                23 de Diciembre, 2024
-              </p>
-            </div>
-            
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-christmas-gold to-transparent mx-auto mb-6"></div>
-            
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              En esta época de amor y celebración, queremos compartir con vosotros 
-              el momento más especial de nuestras vidas. Uníos a nosotros en una 
-              boda navideña llena de magia, amor y alegría.
-            </p>
-            
-            <div className="mt-8">
+          </div>
+
+          <div className="mt-8">
               <img 
                 src="/lovable-uploads/295a24de-dc84-42b8-8853-477084fb8438.png" 
                 alt="Lazo rojo nupcial"
-                className="w-64 h-auto mx-auto opacity-90"
+                className="w-32 h-auto mx-auto opacity-90"
                 loading="lazy"
               />
-            </div>
+          </div>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              ¡Nos casamos! Y estamos deseando celebrar junto a vosotros nuestra boda. Mientras llega el gran día hemos creado
+              esta web para que estéis al día de todo lo que va a ocurrir.
+            </p>
           </CardContent>
         </Card>
 
         {/* Celebration Card */}
         <div className="mb-12">
-          <Card className="bg-accent/10 border-accent/30">
+          <Card className="bg-[#82050b] border-accent/30">
             <CardContent className="p-10 text-center">
-              <Heart className="w-8 h-8 mx-auto mb-4 text-accent" />
-              <h3 className="text-2xl font-serif mb-2 text-foreground">CELEBRACIÓN</h3>
-              <h4 className="text-xl mb-4 text-muted-foreground">Palacio Invernal</h4>
-              <Button
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
-              >
-                ¿CÓMO LLEGAR?
-              </Button>
+              <Heart className="w-8 h-8 mx-auto mb-4 text-white" />
+              <h3 className="text-2xl font-serif mb-2 text-white">CELEBRACIÓN</h3>
+              <h4 className="text-xl mb-4 text-white">Bodega Vinas de El Regajal - Aranjuez</h4>
+              <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
+                >
+                  ¿CÓMO LLEGAR?
+                </Button>
+              </a>
             </CardContent>
           </Card>
         </div>
@@ -226,7 +215,6 @@ const ChristmasWedding = () => {
               <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-christmas-burgundy transform -translate-x-1/2"></div>
               
               {timelineEvents.map((event, index) => {
-                const IconComponent = event.icon;
                 return (
                   <div key={index} className="relative mb-12 last:mb-0">
                     {/* Red dot on the line */}
@@ -234,13 +222,18 @@ const ChristmasWedding = () => {
                     
                     {/* Content alternating sides */}
                     <div className={`flex items-start ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                      {/* Icon and time side */}
+                      {/* Image and time side */}
                       <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                         <div className="mb-2">
-                          <IconComponent className="w-8 h-8 text-christmas-forest mx-auto" style={{
-                            filter: 'drop-shadow(1px 1px 0px rgba(0,0,0,0.1))',
-                            transform: 'rotate(-5deg)'
-                          }} />
+                          <img 
+                            src={event.image} 
+                            alt={`${event.event} icon`}
+                            className="w-30 h-30 mx-auto object-contain" 
+                            style={{
+                              filter: 'drop-shadow(1px 1px 0px rgba(0,0,0,0.1))',
+                              transform: 'rotate(-5deg)'
+                            }} 
+                          />
                         </div>
                         <div className="text-2xl font-bold text-christmas-forest mb-1">{event.time}</div>
                       </div>
