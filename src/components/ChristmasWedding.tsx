@@ -31,7 +31,7 @@ const ChristmasWedding = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name) {
       toast({
         title: "Error",
@@ -66,7 +66,7 @@ const ChristmasWedding = () => {
           title: "¡Confirmación enviada!",
           description: "Gracias por confirmar tu asistencia a nuestra boda navideña.",
         });
-        
+
         // Reset form
         setFormData({
           name: '',
@@ -94,15 +94,15 @@ const ChristmasWedding = () => {
   const createRestaurantEntry = (name: string, mapsUrl: string, description: string, priceRange: string, linkType?: 'instagram' | 'website' | 'facebook' | 'info', linkUrl?: string) => {
     const renderLink = () => {
       if (!linkType || !linkUrl) return null;
-      
+
       const linkClasses = "ml-2 text-christmas-burgundy hover:text-christmas-forest underline";
-      
+
       switch (linkType) {
         case 'instagram':
           return (
             <a href={linkUrl} target="_blank" rel="noopener noreferrer" className={linkClasses}>
               <svg className="w-4 h-4 inline" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
               </svg>
             </a>
           );
@@ -110,7 +110,7 @@ const ChristmasWedding = () => {
           return (
             <a href={linkUrl} target="_blank" rel="noopener noreferrer" className={linkClasses}>
               <svg className="w-4 h-4 inline" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
               </svg>
             </a>
           );
@@ -118,7 +118,7 @@ const ChristmasWedding = () => {
           return (
             <a href={linkUrl} target="_blank" rel="noopener noreferrer" className={linkClasses}>
               <svg className="w-4 h-4 inline" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
           );
@@ -147,18 +147,18 @@ const ChristmasWedding = () => {
   const faqData = [
     {
       question: "Alojamientos",
-              answer: (
-          <div>
-            <ul className="list-disc list-inside space-y-2 text-left mb-4">
-              <li><a href="https://www.booking.com/Share-dZ96NhA" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">NH Collection Palacio de Aranjuez</a><a>***</a></li>
-              <li><a href="https://www.booking.com/Share-599LpH" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Hotel Equo Aranjuez</a></li>
-              <li><a href="https://www.booking.com/Share-EuBSI2" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Royal Retreat Aranjuez</a></li>
-            </ul>
-            <p className="text-sm text-muted-foreground italic text-left">
-              *** El <b>Hotel NH Collection Palacio de Aranjuez</b> solo se puede reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros.
-            </p>
-          </div>
-        )
+      answer: (
+        <div>
+          <ul className="list-disc list-inside space-y-2 text-left mb-4">
+            <li><a href="https://www.booking.com/Share-dZ96NhA" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">NH Collection Palacio de Aranjuez</a><a>***</a></li>
+            <li><a href="https://www.booking.com/Share-599LpH" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Hotel Equo Aranjuez</a></li>
+            <li><a href="https://www.booking.com/Share-EuBSI2" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Royal Retreat Aranjuez</a></li>
+          </ul>
+          <p className="text-sm text-muted-foreground italic text-left">
+            *** El <b>Hotel NH Collection Palacio de Aranjuez</b> solo se puede reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros.
+          </p>
+        </div>
+      )
     },
     {
       question: "Restaurantes",
@@ -204,22 +204,22 @@ const ChristmasWedding = () => {
       answer: (
         <ul className="list-disc list-inside space-y-2 text-left">
           <li><a href="https://maps.app.goo.gl/ccR2NYq32gQQmyP1A" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Centro de Estetica Almibar en Aranjuez</a>
-          <a>. Estética y maquillaje profesional</a></li>
+            <a>. Estética y maquillaje profesional</a></li>
           <li><a href="https://maps.app.goo.gl/inrou13XepBKqnAi6" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">RC Peluqueros y Estilistas</a>
-          <a>. Peluquería y estilismo profesional</a></li>
+            <a>. Peluquería y estilismo profesional</a></li>
           <li><a href="https://maps.app.goo.gl/LJWRD86ETGc3Gisd8" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Chic’s Peluqueros</a>
-          <a>. Peluquería</a></li>
+            <a>. Peluquería</a></li>
         </ul>
       )
     },
     {
       question: "Transporte",
-              answer: (
-          <p className="text-left">
-            🚌 Hay un autobús disponible desde dos paradas en Aranjuez —una en el Hotel NH Collection Palacio y otra en el Hotel 
-            Equo— hasta la finca El Regajal. <b>Es necesario confirmarlo previamente mediante el formulario final.</b>
-          </p>
-        )
+      answer: (
+        <p className="text-left">
+          🚌 Hay un autobús disponible desde dos paradas en Aranjuez —una en el Hotel NH Collection Palacio y otra en el Hotel
+          Equo— hasta la finca El Regajal. <b>Es necesario confirmarlo previamente mediante el formulario final.</b>
+        </p>
+      )
     },
     {
       question: "Regalo de boda",
@@ -228,8 +228,8 @@ const ChristmasWedding = () => {
           <p className="text-left">✨ Si queréis tener un detalle con nosotros, os dejamos nuestro número de cuenta.</p>
           <div className="relative bg-white rounded-lg">
             <div className="px-4 py-3">
-              <div className="flex items-center justify-between">
-                <code className="text-gray-800 font-mono text-sm">
+              <div className="flex items-center justify-between gap-3">
+                <code className="text-gray-800 font-mono text-xs break-words">
                   ES13 2085 9723 1403 3050 6955
                 </code>
                 <Button
@@ -242,7 +242,7 @@ const ChristmasWedding = () => {
                       description: "Número de cuenta copiado al portapapeles",
                     });
                   }}
-                  className="text-gray-600 hover:text-gray-800 hover:bg-gray-100 h-8 px-2"
+                  className="text-gray-600 hover:text-gray-800 hover:bg-gray-100 h-8 px-2 flex-shrink-0"
                 >
                   📋 Copiar
                 </Button>
@@ -259,7 +259,7 @@ const ChristmasWedding = () => {
       {/* Decorative snowflakes */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         {[...Array(20)].map((_, i) => (
-          <Snowflake 
+          <Snowflake
             key={i}
             className="absolute text-christmas-gold/20 animate-pulse"
             style={{
@@ -272,30 +272,30 @@ const ChristmasWedding = () => {
         ))}
       </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-12 bg-[#82050b]/5 rounded-lg p-8 font-['Helvetica']">
+      <div className="relative z-10 container mx-auto px-4 py-12 bg-[#82050b]/5 rounded-lg p-8 font-['Helvetica']">
         {/* Hero Section */}
         <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30">
           <CardContent className="p-12 text-center">
 
-          <div className="mt-8">
-              <img 
-                src={titleImage} 
+            <div className="mt-8">
+              <img
+                src={titleImage}
                 alt="Titulo"
                 className="w-full max-w-4xl mx-auto opacity-90"
                 loading="lazy"
               />
-          </div>
+            </div>
 
-          <div className="mt-8 mb-12">
-            <img 
-              src={coverImage} 
-              alt="Cover"
-              className="w-full h-auto max-w-6xl mx-auto opacity-90"
-              loading="lazy"
-            />
-          </div>
-            
-          <p className="text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <div className="mt-8 mb-12">
+              <img
+                src={coverImage}
+                alt="Cover"
+                className="w-full h-auto max-w-6xl mx-auto opacity-90"
+                loading="lazy"
+              />
+            </div>
+
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               ¡Nos casamos! Y estamos deseando celebrar junto a vosotros nuestra boda. Mientras llega el gran día hemos creado
               esta web para que estéis al tanto de todo lo que va a ocurrir.
             </p>
@@ -305,46 +305,46 @@ const ChristmasWedding = () => {
         {/* Celebration Card */}
         <div className="mb-12">
           <Card className="bg-[#82050b] border-accent/30">
-            <CardContent className="p-10">               
-                {/* Two-column layout for venue info */}
+            <CardContent className="p-10">
+              {/* Two-column layout for venue info */}
               <div className="grid grid-cols-2 gap-8">
-                  {/* Left side - Empty for balance */}
-                 <div className="flex flex-col justify-center items-center text-center">
-                   <div className="flex items-center gap-4">                     
-                     <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
-                       <Button
-                         variant="outline"
-                         className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
-                       >
-                         Hotel NH Collection Palacio de Aranjuez
-                       </Button>
-                     </a>
-                   </div>
-                   <div className="flex items-center gap-4">                     
-                     <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
-                       <Button
-                         variant="outline"
-                         className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
-                       >
-                         Hotel Equo Aranjuez
-                       </Button>
-                     </a>
-                   </div>
-                 </div>
+                {/* Left side - Empty for balance */}
+                <div className="flex flex-col justify-center items-center text-center">
+                  <div className="w-full">
+                    <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer" className="inline-block">
+                      <Button
+                        variant="outline"
+                        className="border-accent text-accent hover:bg-accent hover:text-primary-foreground whitespace-nowrap"
+                      >
+                        Hotel NH Collection Palacio de Aranjuez
+                      </Button>
+                    </a>
+                  </div>
+                  <div className="w-full">
+                    <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer" className="inline-block">
+                      <Button
+                        variant="outline"
+                        className="border-accent text-accent hover:bg-accent hover:text-primary-foreground whitespace-nowrap"
+                      >
+                        Hotel Equo Aranjuez
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Right side - Venue info and button */}
               <div></div>
 
-                {/* Full width image section */} 
-                <div className="mb-6 px-8">
-                  <img 
-                    src={locationImage} 
-                    alt="Location"
-                    className="w-full opacity-90"
-                    loading="lazy"
-                  />
-                </div>
+              {/* Full width image section */}
+              <div className="mb-6 px-4 sm:px-8">
+                <img
+                  src={locationImage}
+                  alt="Location"
+                  className="w-full h-auto max-w-full opacity-90 object-contain"
+                  loading="lazy"
+                />
+              </div>
 
               {/* Two-column layout for venue info */}
               <div className="grid grid-cols-2 gap-8">
@@ -352,7 +352,7 @@ const ChristmasWedding = () => {
                 <div></div>
 
                 {/* Right side - Venue info and button */}
-                <div className="flex flex-col justify-center items-center text-center">                  
+                <div className="flex flex-col justify-center items-center text-center">
                   <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
                     <Button
                       variant="outline"
@@ -374,12 +374,12 @@ const ChristmasWedding = () => {
               Timeline
             </h2>
 
-            <img 
-               src={timelineImage} 
-               alt="Timeline"
-               className="w-full max-w-md mx-auto opacity-90"
-               loading="lazy"
-             />
+            <img
+              src={timelineImage}
+              alt="Timeline"
+              className="w-full max-w-md mx-auto opacity-90"
+              loading="lazy"
+            />
           </CardContent>
         </Card>
 
@@ -387,13 +387,11 @@ const ChristmasWedding = () => {
         <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30">
           <CardContent className="p-8">
             <div className="flex items-center justify-center gap-3 mb-8">
-              <Star className="w-6 h-6 text-christmas-burgundy" />
               <h2 className="text-3xl font-serif text-center text-christmas-forest">
                 Recomendaciones
               </h2>
-              <Star className="w-6 h-6 text-christmas-burgundy" />
             </div>
-            
+
             <Accordion type="single" collapsible className="max-w-3xl mx-auto">
               {faqData.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-christmas-gold/30">
@@ -413,13 +411,11 @@ const ChristmasWedding = () => {
         <Card className="mb-12 bg-gradient-to-br from-christmas-champagne to-background border-christmas-gold/50">
           <CardContent className="p-8">
             <div className="flex items-center justify-center gap-3 mb-8">
-              <TreePine className="w-6 h-6 text-christmas-forest" />
               <h2 className="text-3xl font-serif text-center text-christmas-forest">
                 Confirma tu Asistencia
               </h2>
-              <TreePine className="w-6 h-6 text-christmas-forest" />
             </div>
-            
+
             <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
               <div>
                 <Label htmlFor="name" className="text-christmas-forest font-medium">
@@ -482,8 +478,8 @@ const ChristmasWedding = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isLoading}
                 className="w-full bg-christmas-forest hover:bg-christmas-pine text-christmas-champagne text-lg py-3 disabled:opacity-50"
               >
@@ -497,8 +493,8 @@ const ChristmasWedding = () => {
         {/* Bimba Farewell Card */}
         <Card className="mb-2 bg-gradient-to-br from-christmas-champagne to-background border-christmas-gold/50">
           <CardContent className="p-8 text-center">
-            <img 
-              src={bimbaFarewell} 
+            <img
+              src={bimbaFarewell}
               alt="Bimba os esperamos"
               className="w-full max-w-2xl mx-auto opacity-90"
               loading="lazy"
