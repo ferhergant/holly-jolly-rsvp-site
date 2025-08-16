@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Heart, TreePine, Snowflake, Bell, Calendar, MapPin, Clock, Star } from 'lucide-react';
 import titleImage from '../assets/title.png';
 import bimbaFarewell from '../assets/bimba-os-esperamos.png';
+import timelineImage from '../assets/timeline.png';
 // using uploaded illustration path
 
 const ChristmasWedding = () => {
@@ -87,32 +88,7 @@ const ChristmasWedding = () => {
     }
   };
 
-  const timelineEvents = [
-    {
-      time: "16:30h",
-      event: "Ceremonia",
-      image: "/lovable-uploads/0f9d8a23-0e35-4cb1-9018-9103e40e769d.png",
-      description: "Iglesia San Nicolás"
-    },
-    {
-      time: "18:00h", 
-      event: "Cóctel Navideño",
-      image: "/lovable-uploads/295a24de-dc84-42b8-8853-477084fb8438.png",
-      description: "Jardines del Palacio"
-    },
-    {
-      time: "20:30h",
-      event: "Cena",
-      image: "/lovable-uploads/7f1282cc-1be3-40a4-bb20-2e04798854fc.png",
-      description: "Salón Principal"
-    },
-    {
-      time: "23:00h",
-      event: "Fiesta de Nochebuena",
-      image: "/lovable-uploads/0f9d8a23-0e35-4cb1-9018-9103e40e769d.png",
-      description: "¡Hasta el amanecer!"
-    }
-  ];
+
 
   const faqData = [
     {
@@ -164,7 +140,7 @@ const ChristmasWedding = () => {
               <img 
                 src={titleImage} 
                 alt="Titulo"
-                className="w-full max-w-2xl mx-auto opacity-90"
+                className="w-full max-w-4xl mx-auto opacity-90"
                 loading="lazy"
               />
           </div>
@@ -210,54 +186,13 @@ const ChristmasWedding = () => {
             <h2 className="text-3xl font-serif text-center text-christmas-forest mb-12">
               Cronograma Navideño
             </h2>
-            
-            <div className="relative max-w-md mx-auto">
-              {/* Vertical line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-christmas-burgundy transform -translate-x-1/2"></div>
-              
-              {timelineEvents.map((event, index) => {
-                return (
-                  <div key={index} className="relative mb-12 last:mb-0">
-                    {/* Red dot on the line */}
-                    <div className="absolute left-1/2 top-6 w-3 h-3 bg-christmas-burgundy rounded-full transform -translate-x-1/2 z-10"></div>
-                    
-                    {/* Content alternating sides */}
-                    <div className={`flex items-start ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                      {/* Image and time side */}
-                      <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                        <div className="mb-2">
-                          <img 
-                            src={event.image} 
-                            alt={`${event.event} icon`}
-                            className="w-30 h-30 mx-auto object-contain" 
-                            style={{
-                              filter: 'drop-shadow(1px 1px 0px rgba(0,0,0,0.1))',
-                              transform: 'rotate(-5deg)'
-                            }} 
-                          />
-                        </div>
-                        <div className="text-2xl font-bold text-christmas-forest mb-1">{event.time}</div>
-                      </div>
-                      
-                      {/* Event details side */}
-                      <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8 text-left' : 'pr-8 text-right'}`}>
-                        <h3 className="text-xl font-serif text-christmas-forest mb-2" style={{
-                          transform: 'rotate(1deg)',
-                          transformOrigin: 'center'
-                        }}>
-                          {event.event}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed" style={{
-                          transform: 'rotate(-0.5deg)'
-                        }}>
-                          {event.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+
+            <img 
+               src={timelineImage} 
+               alt="Timeline"
+               className="w-full max-w-md mx-auto opacity-90"
+               loading="lazy"
+             />
           </CardContent>
         </Card>
 
@@ -354,7 +289,7 @@ const ChristmasWedding = () => {
                   id="allergies"
                   value={formData.allergies}
                   onChange={(e) => handleInputChange('allergies', e.target.value)}
-                  className="mt-1 border-christmas-gold/50 focus:border-christmas-forest resize-none"
+                  className="mt-1 border-2 border-christmas-gold focus:border-christmas-forest resize-none rounded-md"
                   placeholder="Compártenos cualquier alergia o preferencia alimentaria"
                   rows={3}
                 />
