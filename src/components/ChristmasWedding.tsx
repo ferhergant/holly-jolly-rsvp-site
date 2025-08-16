@@ -8,6 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { useToast } from '@/hooks/use-toast';
 import { Heart, TreePine, Snowflake, Bell, Calendar, MapPin, Clock, Star } from 'lucide-react';
 import titleImage from '../assets/title.png';
+import bimbaFarewell from '../assets/bimba-os-esperamos.png';
 // using uploaded illustration path
 
 const ChristmasWedding = () => {
@@ -287,7 +288,7 @@ const ChristmasWedding = () => {
         </Card>
 
         {/* RSVP Form */}
-        <Card className="bg-gradient-to-br from-christmas-champagne to-background border-christmas-gold/50">
+        <Card className="mb-12 bg-gradient-to-br from-christmas-champagne to-background border-christmas-gold/50">
           <CardContent className="p-8">
             <div className="flex items-center justify-center gap-3 mb-8">
               <TreePine className="w-6 h-6 text-christmas-forest" />
@@ -367,10 +368,23 @@ const ChristmasWedding = () => {
                 {isLoading ? 'Enviando...' : 'Confirmar Asistencia 🎄'}
               </Button>
             </form>
+          </CardContent>
+        </Card>
+
+
+        {/* Bimba Farewell Card */}
+        <Card className="mb-2 bg-gradient-to-br from-christmas-champagne to-background border-christmas-gold/50">
+          <CardContent className="p-8 text-center">
+            <img 
+              src={bimbaFarewell} 
+              alt="Bimba os esperamos"
+              className="w-full max-w-2xl mx-auto opacity-90"
+              loading="lazy"
+            />
 
             <div className="mt-8 text-center">
               <p className="text-sm text-muted-foreground">
-                ¡No pueden esperar a celebrar con ustedes esta Navidad tan especial!
+                ¡Estamos deseando que nos acompañes en este día tan especial!
               </p>
               <div className="flex justify-center mt-4 gap-2">
                 <Heart className="w-4 h-4 text-christmas-burgundy" />
