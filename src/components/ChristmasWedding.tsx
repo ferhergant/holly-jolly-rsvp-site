@@ -278,29 +278,64 @@ const ChristmasWedding = () => {
         {/* Celebration Card */}
         <div className="mb-12">
           <Card className="bg-[#82050b] border-accent/30">
-            <CardContent className="p-10 text-center">
-              <Heart className="w-8 h-8 mx-auto mb-4 text-white" />
-              <h3 className="text-2xl font-serif mb-2 text-white">CELEBRACIÓN</h3>
-              
-              <div className="mb-6">
-                <img 
-                  src={locationImage} 
-                  alt="Location"
-                  className="w-full opacity-90"
-                  loading="lazy"
-                />
+            <CardContent className="p-10">               
+                {/* Two-column layout for venue info */}
+              <div className="grid grid-cols-2 gap-8">
+                  {/* Left side - Empty for balance */}
+                 <div className="flex flex-col justify-center items-center text-center">
+                   <div className="flex items-center gap-4">                     
+                     <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
+                       <Button
+                         variant="outline"
+                         className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
+                       >
+                         Hotel NH Collection Palacio de Aranjuez
+                       </Button>
+                     </a>
+                   </div>
+                   <div className="flex items-center gap-4">                     
+                     <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
+                       <Button
+                         variant="outline"
+                         className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
+                       >
+                         Hotel Equo Aranjuez
+                       </Button>
+                     </a>
+                   </div>
+                 </div>
               </div>
 
-              <h4 className="text-xl mb-4 text-white">Bodega Vinas de El Regajal - Aranjuez</h4>
-              
-              <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="outline"
-                  className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
-                >
-                  ¿CÓMO LLEGAR?
-                </Button>
-              </a>
+              {/* Right side - Venue info and button */}
+              <div></div>
+
+                {/* Full width image section */} 
+                <div className="mb-6 px-8">
+                  <img 
+                    src={locationImage} 
+                    alt="Location"
+                    className="w-full opacity-90"
+                    loading="lazy"
+                  />
+                </div>
+
+              {/* Two-column layout for venue info */}
+              <div className="grid grid-cols-2 gap-8">
+                {/* Left side - Empty for balance */}
+                <div></div>
+
+                {/* Right side - Venue info and button */}
+                <div className="flex flex-col justify-center items-center text-center">                  
+                  <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
+                    >
+                      Finca El Regajal - Aranjuez
+                    </Button>
+                  </a>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
