@@ -8,6 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { useToast } from '@/hooks/use-toast';
 import { Heart, TreePine, Snowflake, Bell, Calendar, MapPin, Clock, Star } from 'lucide-react';
 import titleImage from '../assets/title.png';
+import coverImage from '../assets/cover.png';
 import bimbaFarewell from '../assets/bimba-os-esperamos.png';
 import timelineImage from '../assets/timeline.png';
 // using uploaded illustration path
@@ -267,16 +268,16 @@ const ChristmasWedding = () => {
               />
           </div>
 
-          <div className="mt-8">
-              <img 
-                src="/lovable-uploads/295a24de-dc84-42b8-8853-477084fb8438.png" 
-                alt="Lazo rojo nupcial"
-                className="w-32 h-auto mx-auto opacity-90"
-                loading="lazy"
-              />
+          <div className="mt-8 mb-12">
+            <img 
+              src={coverImage} 
+              alt="Cover"
+              className="w-full h-auto max-w-6xl mx-auto opacity-90"
+              loading="lazy"
+            />
           </div>
             
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               ¡Nos casamos! Y estamos deseando celebrar junto a vosotros nuestra boda. Mientras llega el gran día hemos creado
               esta web para que estéis al día de todo lo que va a ocurrir.
             </p>
