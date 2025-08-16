@@ -11,6 +11,7 @@ import titleImage from '../assets/title.png';
 import coverImage from '../assets/cover.png';
 import bimbaFarewell from '../assets/bimba-os-esperamos.png';
 import timelineImage from '../assets/timeline.png';
+import locationImage from '../assets/location.png';
 // using uploaded illustration path
 
 const ChristmasWedding = () => {
@@ -137,7 +138,7 @@ const ChristmasWedding = () => {
         <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">
           {name}
         </a>
-        <span className="text-muted-foreground">. {description} {priceRange}</span>
+        <span className="text-muted-foreground">. {description} <b>{priceRange}</b></span>
         {renderLink()}
       </li>
     );
@@ -154,7 +155,7 @@ const ChristmasWedding = () => {
               <li><a href="https://www.booking.com/Share-EuBSI2" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Royal Retreat Aranjuez</a></li>
             </ul>
             <p className="text-sm text-muted-foreground italic text-left">
-              *** El Hotel NH Collection Palacio de Aranjuez solo se puede reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros
+              *** El <b>Hotel NH Collection Palacio de Aranjuez</b> solo se puede reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros.
             </p>
           </div>
         )
@@ -202,36 +203,26 @@ const ChristmasWedding = () => {
       question: "Peluquería y maquillaje",
       answer: (
         <ul className="list-disc list-inside space-y-2 text-left">
-          <li>Salón de Belleza Aranjuez - Centro de la ciudad</li>
-          <li>Estética María José - Especializada en bodas</li>
-          <li>Peluquería Unisex Estilo - Servicio a domicilio</li>
-          <li>Centro de Belleza Glamour - Maquillaje profesional</li>
-          <li>Salón Elegance - Tratamientos completos</li>
+          <li><a href="https://maps.app.goo.gl/ccR2NYq32gQQmyP1A" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Centro de Estetica Almibar en Aranjuez</a>
+          <a>. Estética y maquillaje profesional</a></li>
+          <li><a href="https://maps.app.goo.gl/inrou13XepBKqnAi6" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">RC Peluqueros y Estilistas</a>
+          <a>. Peluquería y estilismo profesional</a></li>
         </ul>
       )
     },
     {
       question: "Transporte",
-      answer: (
-        <ul className="list-disc list-inside space-y-2 text-left">
-          <li>Autobús gratuito desde Plaza Mayor - Cada 30 min</li>
-          <li>Taxi desde estación de tren - 10 min al venue</li>
-          <li>Parking gratuito en el venue</li>
-          <li>Servicio de lanzadera desde hoteles</li>
-          <li>Uber y Cabify disponibles en la zona</li>
-        </ul>
-      )
+              answer: (
+          <p className="text-left">
+            Hay un autobús disponible desde dos paradas en Aranjuez —una en el Hotel NH Collection Palacio y otra en el Hotel 
+            Equo— hasta la finca El Regajal. <b>Es necesario confirmarlo previamente mediante el formulario final.</b>
+          </p>
+        )
     },
     {
       question: "Regalo de boda",
       answer: (
-        <ul className="list-disc list-inside space-y-2 text-left">
-          <li>Tu presencia es nuestro mejor regalo</li>
-          <li>Si deseas hacer un regalo, preferimos sobres</li>
-          <li>También aceptamos regalos de la lista de bodas</li>
-          <li>Información de cuenta bancaria disponible</li>
-          <li>Regalos físicos se pueden entregar el día de la boda</li>
-        </ul>
+        <p className="text-left">✨ Si queréis tener un detalle con nosotros, os dejamos nuestro número de cuenta.</p>
       )
     }
   ];
@@ -279,7 +270,7 @@ const ChristmasWedding = () => {
             
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               ¡Nos casamos! Y estamos deseando celebrar junto a vosotros nuestra boda. Mientras llega el gran día hemos creado
-              esta web para que estéis al día de todo lo que va a ocurrir.
+              esta web para que estéis al tanto de todo lo que va a ocurrir.
             </p>
           </CardContent>
         </Card>
@@ -290,7 +281,18 @@ const ChristmasWedding = () => {
             <CardContent className="p-10 text-center">
               <Heart className="w-8 h-8 mx-auto mb-4 text-white" />
               <h3 className="text-2xl font-serif mb-2 text-white">CELEBRACIÓN</h3>
+              
+              <div className="mb-6">
+                <img 
+                  src={locationImage} 
+                  alt="Location"
+                  className="w-full opacity-90"
+                  loading="lazy"
+                />
+              </div>
+
               <h4 className="text-xl mb-4 text-white">Bodega Vinas de El Regajal - Aranjuez</h4>
+              
               <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
