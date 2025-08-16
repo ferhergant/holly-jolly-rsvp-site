@@ -63,8 +63,9 @@ const ChristmasWedding = () => {
 
       if (response.ok) {
         toast({
-          title: "¡Confirmación enviada!",
+          title: "¡Confirmación enviada! 💒",
           description: "Gracias por confirmar tu asistencia a nuestra boda navideña.",
+          className: "bg-[#82050b]/90 text-white border-[#82050b]/50",
         });
 
         // Reset form
@@ -238,8 +239,9 @@ const ChristmasWedding = () => {
                   onClick={() => {
                     navigator.clipboard.writeText('ES13 2085 9723 1403 3050 6955');
                     toast({
-                      title: "¡Copiado!",
+                      title: "¡Copiado! 🎉",
                       description: "Número de cuenta copiado al portapapeles",
+                      className: "bg-[#82050b]/90 text-white border-[#82050b]/50",
                     });
                   }}
                   className="text-gray-600 hover:text-gray-800 hover:bg-gray-100 h-8 px-2 flex-shrink-0"
@@ -306,6 +308,12 @@ const ChristmasWedding = () => {
         <div className="mb-12">
           <Card className="bg-[#82050b] border-accent/30">
             <CardContent className="p-10">
+
+              <h2 className="text-3xl font-serif text-center text-white mb-12">
+                Lugar de la celebración
+              </h2>
+
+
               {/* Two-column layout for venue info */}
               <div className="grid grid-cols-2 gap-8">
                 {/* Left side - Empty for balance */}
