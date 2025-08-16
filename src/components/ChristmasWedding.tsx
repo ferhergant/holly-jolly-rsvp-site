@@ -115,23 +115,23 @@ const ChristmasWedding = () => {
 
   const faqData = [
     {
-      question: "¿Hay código de vestimenta navideño?",
-      answer: "Invitamos a nuestros invitados a incorporar toques navideños en su vestimenta: colores como verde bosque, dorado, burgundy o elementos festivos discretos. ¡Pero lo más importante es que te sientas cómodo y elegante!"
+      question: "Alojamientos",
+      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      question: "¿Pueden asistir niños?",
+      question: "Restaurantes",
       answer: "¡Por supuesto! Los niños son bienvenidos en nuestra celebración navideña. Habrá actividades especiales y un menú infantil disponible."
     },
     {
-      question: "¿Hay servicio de transporte?",
+      question: "Peluquería y maquillaje",
       answer: "Ofrecemos transporte gratuito desde el centro de la ciudad hasta el venue. Los buses saldrán cada 30 minutos a partir de las 15:30h desde la Plaza Mayor."
     },
     {
-      question: "¿Qué pasa si nieva?",
+      question: "Transporte",
       answer: "¡Será aún más mágico! Nuestro venue cuenta con espacios interiores completamente equipados y calefaccionados para disfrutar sin preocupaciones."
     },
     {
-      question: "¿Habrá regalos de Navidad?",
+      question: "Regalo de boda",
       answer: "Como regalo especial, cada invitado recibirá un detalle navideño personalizado. ¡Tu presencia es nuestro mejor regalo!"
     }
   ];
@@ -154,7 +154,7 @@ const ChristmasWedding = () => {
         ))}
       </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-12 bg-[#82050b]/5 rounded-lg p-8">
+        <div className="relative z-10 container mx-auto px-4 py-12 bg-[#82050b]/5 rounded-lg p-8 font-['Helvetica']">
         {/* Hero Section */}
         <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30">
           <CardContent className="p-12 text-center">
@@ -266,7 +266,7 @@ const ChristmasWedding = () => {
             <div className="flex items-center justify-center gap-3 mb-8">
               <Star className="w-6 h-6 text-christmas-burgundy" />
               <h2 className="text-3xl font-serif text-center text-christmas-forest">
-                Preguntas Frecuentes
+                Recomendaciones
               </h2>
               <Star className="w-6 h-6 text-christmas-burgundy" />
             </div>
