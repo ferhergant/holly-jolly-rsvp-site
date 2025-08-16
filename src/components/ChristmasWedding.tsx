@@ -207,6 +207,8 @@ const ChristmasWedding = () => {
           <a>. Estética y maquillaje profesional</a></li>
           <li><a href="https://maps.app.goo.gl/inrou13XepBKqnAi6" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">RC Peluqueros y Estilistas</a>
           <a>. Peluquería y estilismo profesional</a></li>
+          <li><a href="https://maps.app.goo.gl/LJWRD86ETGc3Gisd8" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Chic’s Peluqueros</a>
+          <a>. Peluquería</a></li>
         </ul>
       )
     },
@@ -214,7 +216,7 @@ const ChristmasWedding = () => {
       question: "Transporte",
               answer: (
           <p className="text-left">
-            Hay un autobús disponible desde dos paradas en Aranjuez —una en el Hotel NH Collection Palacio y otra en el Hotel 
+            🚌 Hay un autobús disponible desde dos paradas en Aranjuez —una en el Hotel NH Collection Palacio y otra en el Hotel 
             Equo— hasta la finca El Regajal. <b>Es necesario confirmarlo previamente mediante el formulario final.</b>
           </p>
         )
@@ -222,7 +224,32 @@ const ChristmasWedding = () => {
     {
       question: "Regalo de boda",
       answer: (
-        <p className="text-left">✨ Si queréis tener un detalle con nosotros, os dejamos nuestro número de cuenta.</p>
+        <div>
+          <p className="text-left">✨ Si queréis tener un detalle con nosotros, os dejamos nuestro número de cuenta.</p>
+          <div className="relative bg-white rounded-lg">
+            <div className="px-4 py-3">
+              <div className="flex items-center justify-between">
+                <code className="text-gray-800 font-mono text-sm">
+                  ES13 2085 9723 1403 3050 6955
+                </code>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    navigator.clipboard.writeText('ES13 2085 9723 1403 3050 6955');
+                    toast({
+                      title: "¡Copiado!",
+                      description: "Número de cuenta copiado al portapapeles",
+                    });
+                  }}
+                  className="text-gray-600 hover:text-gray-800 hover:bg-gray-100 h-8 px-2"
+                >
+                  📋 Copiar
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       )
     }
   ];
