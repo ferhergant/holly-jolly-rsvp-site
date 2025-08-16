@@ -154,9 +154,9 @@ const ChristmasWedding = () => {
         ))}
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-12">
+        <div className="relative z-10 container mx-auto px-4 py-12 bg-[#82050b]/5 rounded-lg p-8">
         {/* Hero Section */}
-        <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30 shadow-[var(--shadow-warm)]">
+        <Card className="mb-12 bg-card/80 backdrop-blur-sm border-christmas-gold/30">
           <CardContent className="p-12 text-center">
 
           <div className="mt-8">
