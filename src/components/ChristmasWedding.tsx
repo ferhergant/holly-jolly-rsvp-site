@@ -327,27 +327,27 @@ const ChristmasWedding = () => {
                       loading="lazy"
                     />
                     <div className="mt-4 text-center flex-1 flex flex-col justify-center">
-                      <h4 className="text-white font-semibold text-lg mb-2">Paradas de Autobús</h4>
+                      <h4 className="text-white font-semibold text-lg mb-4">Paradas de Autobús</h4>
                       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <div className="text-left">
-                          <h5 className="text-white font-medium mb-2">Hotel NH Collection</h5>
+                        <div className="text-center">
+                          <h5 className="text-white font-medium mb-3">Hotel NH Collection</h5>
                           <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                              className="border-white text-white hover:bg-white hover:text-red-900 transition-colors bg-white/10"
                             >
                               📍 Ver en Maps
                             </Button>
                           </a>
                         </div>
-                        <div className="text-left">
-                          <h5 className="text-white font-medium mb-2">Hotel Equo</h5>
+                        <div className="text-center">
+                          <h5 className="text-white font-medium mb-3">Hotel Equo</h5>
                           <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                              className="border-white text-white hover:bg-white hover:text-red-900 transition-colors bg-white/10"
                             >
                               📍 Ver en Maps
                             </Button>
@@ -366,13 +366,13 @@ const ChristmasWedding = () => {
                       loading="lazy"
                     />
                     <div className="mt-4 text-center flex-1 flex flex-col justify-center">
-                      <h4 className="text-white font-semibold text-lg mb-2">Lugar de la Celebración</h4>
-                      <h5 className="text-white font-medium">Finca El Regajal</h5>
+                      <h4 className="text-white font-semibold text-lg mb-4">Lugar de la Celebración</h4>
+                      <h5 className="text-white font-medium mb-3">Finca El Regajal</h5>
                       <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                          className="border-white text-white hover:bg-white hover:text-red-900 transition-colors bg-white/10"
                         >
                           📍 Ver Ubicación Final
                         </Button>
