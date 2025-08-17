@@ -304,71 +304,82 @@ const ChristmasWedding = () => {
           </CardContent>
         </Card>
 
-        {/* Celebration Card */}
+        {/* Venue Journey Card */}
         <div className="mb-12">
-          <Card className="bg-[#82050b] border-accent/30">
-                         <CardContent className="p-8">
-
+          <Card className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 border-red-700/50">
+            <CardContent className="p-8">
               <h2 className="text-3xl font-serif text-center text-white mb-12">
-                Lugar de la celebración
+                Celebración & Transporte
               </h2>
 
-
-              {/* Two-column layout for venue info */}
-              <div className="grid grid-cols-2 gap-8">
-                {/* Left side - Empty for balance */}
-                <div className="flex flex-col justify-center items-center text-center">
-                  <div className="w-full">
-                    <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer" className="inline-block">
-                      <Button
-                        variant="outline"
-                        className="border-accent text-accent hover:bg-accent hover:text-primary-foreground whitespace-nowrap"
-                      >
-                        Hotel NH Collection Palacio de Aranjuez
-                      </Button>
-                    </a>
-                  </div>
-                  <div className="w-full">
-                    <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer" className="inline-block">
-                      <Button
-                        variant="outline"
-                        className="border-accent text-accent hover:bg-accent hover:text-primary-foreground whitespace-nowrap"
-                      >
-                        Hotel Equo Aranjuez
-                      </Button>
-                    </a>
+              {/* Journey Layout */}
+              <div className="max-w-6xl mx-auto">
+                {/* Origins Section */}
+                <div className="mb-8">
+                  <h3 className="text-xl text-white/90 text-center mb-6 font-serif">Puntos de Salida</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* Hotel NH */}
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                      <h4 className="text-white font-semibold mb-3">Hotel NH Collection</h4>
+                      <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                        >
+                          Ver en Google Maps
+                        </Button>
+                      </a>
+                    </div>
+                    
+                    {/* Hotel Equo */}
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                      <h4 className="text-white font-semibold mb-3">Hotel Equo</h4>
+                      <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                        >
+                          Ver en Google Maps
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Right side - Venue info and button */}
-              <div></div>
+                {/* Journey Illustration */}
+                <div className="flex flex-col items-center my-8">
+                  <div className="w-full max-w-4xl">
+                    <img
+                      src="/lovable-uploads/d84740b3-408d-4094-8d87-2f2548fb1029.png"
+                      alt="Journey from hotels to venue"
+                      className="w-full h-auto opacity-90 filter brightness-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-white/80 text-sm">
+                      🚌 Transporte disponible desde ambos hoteles
+                    </p>
+                  </div>
+                </div>
 
-              {/* Full width image section */}
-              <div className="mb-6 px-8 sm:px-16">
-                 <img
-                   src={locationImage}
-                   alt="Location"
-                   className="w-full h-auto max-w-full opacity-90 object-contain"
-                   loading="lazy"
-                 />
-               </div>
-
-              {/* Two-column layout for venue info */}
-              <div className="grid grid-cols-2 gap-8">
-                {/* Left side - Empty for balance */}
-                <div></div>
-
-                {/* Right side - Venue info and button */}
-                <div className="flex flex-col justify-center items-center text-center">
-                  <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
-                    <Button
-                      variant="outline"
-                      className="border-accent text-accent hover:bg-accent hover:text-primary-foreground"
-                    >
-                      Finca El Regajal - Aranjuez
-                    </Button>
-                  </a>
+                {/* Destination Section */}
+                <div className="text-center">
+                  <h3 className="text-xl text-white/90 mb-6 font-serif">Destino</h3>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-md mx-auto">
+                    <h4 className="text-white font-semibold mb-3 text-lg">Finca El Regajal</h4>
+                    <p className="text-white/80 text-sm mb-4">Lugar de la celebración</p>
+                    <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant="outline"
+                        className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                      >
+                        Ver Ubicación en Maps
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </CardContent>
