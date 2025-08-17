@@ -11,7 +11,7 @@ import titleImage from '../assets/title.png';
 import coverImage from '../assets/cover.png';
 import bimbaFarewell from '../assets/bimba-os-esperamos.png';
 import timelineImage from '../assets/timeline.png';
-import locationImage from '../assets/location.png';
+import locationImage from '../assets/locationV3.png';
 // using uploaded illustration path
 
 const ChristmasWedding = () => {
@@ -307,7 +307,7 @@ const ChristmasWedding = () => {
         {/* Celebration Card */}
         <div className="mb-12">
           <Card className="bg-[#82050b] border-accent/30">
-            <CardContent className="p-10">
+                         <CardContent className="p-8">
 
               <h2 className="text-3xl font-serif text-center text-white mb-12">
                 Lugar de la celebración
@@ -345,14 +345,14 @@ const ChristmasWedding = () => {
               <div></div>
 
               {/* Full width image section */}
-              <div className="mb-6 px-4 sm:px-8">
-                <img
-                  src={locationImage}
-                  alt="Location"
-                  className="w-full h-auto max-w-full opacity-90 object-contain"
-                  loading="lazy"
-                />
-              </div>
+              <div className="mb-6 px-8 sm:px-16">
+                 <img
+                   src={locationImage}
+                   alt="Location"
+                   className="w-full h-auto max-w-full opacity-90 object-contain"
+                   loading="lazy"
+                 />
+               </div>
 
               {/* Two-column layout for venue info */}
               <div className="grid grid-cols-2 gap-8">
