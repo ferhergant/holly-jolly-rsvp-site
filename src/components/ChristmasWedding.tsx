@@ -24,7 +24,8 @@ const ChristmasWedding = () => {
     allergies: '',
     childrenCount: '',
     childChairs: '',
-    childMenu: ''
+    childMenu: '',
+    normalChairs: ''
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -87,10 +88,12 @@ const ChristmasWedding = () => {
         },
         body: JSON.stringify({
           name: formData.name,
-          companion: formData.companion,
           transport: formData.transport,
           allergies: formData.allergies,
-          attending: formData.attending,
+          childrenCount: formData.childrenCount,
+          childChairs: formData.childChairs,
+          normalChairs: formData.normalChairs,
+          childMenu: formData.childMenu,
           subject: `RSVP de ${formData.name} - Boda Rocío & Jorge`,
           timestamp: new Date().toISOString(),
         }),
@@ -106,13 +109,12 @@ const ChristmasWedding = () => {
         // Reset form
         setFormData({
           name: '',
-          companion: '',
           transport: '',
           allergies: '',
-          attending: '',
           childrenCount: '',
           childChairs: '',
-          childMenu: ''
+          childMenu: '',
+          normalChairs: ''
         });
       } else {
         throw new Error('Error al enviar confirmación');
@@ -570,13 +572,13 @@ const ChristmasWedding = () => {
                       onChange={(e) => handleInputChange('childrenCount', e.target.value)}
                       className="mt-1 w-full border border-christmas-gold/50 focus:border-christmas-forest rounded-md px-3 py-2 bg-white text-christmas-forest font-medium"
                     >
-                      <option value="">Selecciona el número</option>
-                      <option value="0">0 - No hay niños</option>
-                      <option value="1">1 niño</option>
-                      <option value="2">2 niños</option>
-                      <option value="3">3 niños</option>
-                      <option value="4">4 niños</option>
-                      <option value="5+">5 o más niños</option>
+                      <option value="" className="text-christmas-forest font-medium">Selecciona el número</option>
+                      <option value="0" className="text-christmas-forest font-medium">0 - No hay niños</option>
+                      <option value="1" className="text-christmas-forest font-medium">1 niño</option>
+                      <option value="2" className="text-christmas-forest font-medium">2 niños</option>
+                      <option value="3" className="text-christmas-forest font-medium">3 niños</option>
+                      <option value="4" className="text-christmas-forest font-medium">4 niños</option>
+                      <option value="5+" className="text-christmas-forest font-medium">5 o más niños</option>
                     </select>
                   </div>
 
@@ -592,9 +594,29 @@ const ChristmasWedding = () => {
                         onChange={(e) => handleInputChange('childChairs', e.target.value)}
                         className="mt-1 w-full border border-christmas-gold/50 focus:border-christmas-forest rounded-md px-3 py-2 bg-white text-christmas-forest font-medium"
                       >
-                        <option value="">Selecciona el número</option>
+                        <option value="" className="text-christmas-forest font-medium">Selecciona el número</option>
                         {[...Array(parseInt(formData.childrenCount) + 1)].map((_, i) => (
-                          <option key={i} value={i}>{i} trona{i !== 1 ? 's' : ''}</option>
+                          <option key={i} value={i} className="text-christmas-forest font-medium">{i} trona{i !== 1 ? 's' : ''}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+
+                  {/* Child Chairs */}
+                  {formData.childrenCount && formData.childrenCount !== '0' && (
+                    <div>
+                      <Label htmlFor="normalChairs" className="text-christmas-forest font-medium">
+                        ¿Cuántas sillas normales necesitas?
+                      </Label>
+                      <select
+                        id="normalChairs"
+                        value={formData.normalChairs}
+                        onChange={(e) => handleInputChange('normalChairs', e.target.value)}
+                        className="mt-1 w-full border border-christmas-gold/50 focus:border-christmas-forest rounded-md px-3 py-2 bg-white text-christmas-forest font-medium"
+                      >
+                        <option value="" className="text-christmas-forest font-medium">Selecciona el número</option>
+                        {[...Array(parseInt(formData.childrenCount) + 1)].map((_, i) => (
+                          <option key={i} value={i} className="text-christmas-forest font-medium">{i} silla{i !== 1 ? 's' : ''}</option>
                         ))}
                       </select>
                     </div>
@@ -612,9 +634,9 @@ const ChristmasWedding = () => {
                         onChange={(e) => handleInputChange('childMenu', e.target.value)}
                         className="mt-1 w-full border border-christmas-gold/50 focus:border-christmas-forest rounded-md px-3 py-2 bg-white text-christmas-forest font-medium"
                       >
-                        <option value="">Selecciona el número</option>
+                        <option value="" className="text-christmas-forest font-medium">Selecciona el número</option>
                         {[...Array(parseInt(formData.childrenCount) + 1)].map((_, i) => (
-                          <option key={i} value={i}>{i} menú{i !== 1 ? 's' : ''} infantil{i !== 1 ? 'es' : ''}</option>
+                          <option key={i} value={i} className="text-christmas-forest font-medium">{i} menú{i !== 1 ? 's' : ''} infantil{i !== 1 ? 'es' : ''}</option>
                         ))}
                       </select>
                     </div>
