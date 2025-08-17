@@ -11,7 +11,8 @@ import titleImage from '../assets/title.png';
 import coverImage from '../assets/cover.png';
 import bimbaFarewell from '../assets/bimba-os-esperamos.png';
 import timelineImage from '../assets/timeline.png';
-import locationImage from '../assets/locationV3.png';
+import originBusImage from '../assets/origin_bus.png';
+import destinationTreeImage from '../assets/destination_tree.png';
 // using uploaded illustration path
 
 const ChristmasWedding = () => {
@@ -309,96 +310,68 @@ const ChristmasWedding = () => {
           <Card className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 border-red-700/50">
             <CardContent className="p-8">
               <h2 className="text-3xl font-serif text-center text-white mb-12">
-                Celebración & Transporte
+                Ubicaciones
               </h2>
 
               {/* Journey Visualization */}
               <div className="max-w-6xl mx-auto">
-                <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-8">
 
-                  {/* Origins - Hotels */}
-                  <div className="grid md:grid-cols-2 gap-8 mb-8">
-                    {/* Hotel NH */}
-                    <div className="relative flex flex-col items-center">
-                      <div className="bg-white/20 rounded-lg p-4 text-center mb-4 min-h-[100px] flex flex-col justify-center">
-                        <h4 className="text-white font-semibold text-lg mb-2">Hotel NH Collection</h4>
-                        <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
-                          >
-                            📍 Ver en Maps
-                          </Button>
-                        </a>
-                      </div>
-                      {/* Animated path from hotel */}
-                      <div className="hidden md:block absolute top-full left-1/2 w-0.5 h-16 bg-white/40">
-                        <div className="absolute top-0 left-1/2 w-2 h-2 bg-white rounded-full animate-pulse transform -translate-x-1/2"></div>
-                      </div>
-                    </div>
-
-                    {/* Hotel Equo */}
-                    <div className="relative flex flex-col items-center">
-                      <div className="bg-white/20 rounded-lg p-4 text-center mb-4 min-h-[100px] flex flex-col justify-center">
-                        <h4 className="text-white font-semibold text-lg mb-2">Hotel Equo</h4>
-                        <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
-                          >
-                            📍 Ver en Maps
-                          </Button>
-                        </a>
-                      </div>
-                      {/* Animated path from hotel */}
-                      <div className="hidden md:block absolute top-full left-1/2 w-0.5 h-16 bg-white/40">
-                        <div className="absolute top-0 left-1/2 w-2 h-2 bg-white rounded-full animate-pulse transform -translate-x-1/2"></div>
+                {/* Two Images Side by Side */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                  {/* Left Image - Origin */}
+                  <div className="flex flex-col items-center h-full">
+                    <img
+                      src={originBusImage}
+                      alt="Origin - Bus stops"
+                      className="w-full h-auto max-h-64 object-contain rounded-lg opacity-90"
+                      loading="lazy"
+                    />
+                    <div className="mt-4 text-center flex-1 flex flex-col justify-center">
+                      <h4 className="text-white font-semibold text-lg mb-2">Paradas de Autobús</h4>
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <div className="text-left">
+                          <h5 className="text-white font-medium mb-2">Hotel NH Collection</h5>
+                          <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                            >
+                              📍 Ver en Maps
+                            </Button>
+                          </a>
+                        </div>
+                        <div className="text-left">
+                          <h5 className="text-white font-medium mb-2">Hotel Equo</h5>
+                          <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                            >
+                              📍 Ver en Maps
+                            </Button>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Convergence point - Bus Transport */}
-                  <div className="flex justify-center mb-8">
-                    <div className="relative">
-                      {/* Horizontal connecting lines */}
-                      <div className="hidden md:block absolute -top-16 left-1/2 transform -translate-x-1/2">
-                        <div className="flex items-center justify-center">
-                          <div className="w-32 h-0.5 bg-white/40 transform rotate-12"></div>
-                          <div className="w-32 h-0.5 bg-white/40 transform -rotate-12 -ml-16"></div>
-                        </div>
-                      </div>
-
-
-                      {/* Vertical path to destination */}
-                      <div className="absolute top-full left-1/2 w-0.5 h-20 bg-white/40">
-                        <div className="absolute top-4 left-1/2 w-2 h-2 bg-white rounded-full animate-bounce transform -translate-x-1/2"></div>
-                        <div className="absolute top-8 left-1/2 w-2 h-2 bg-white/70 rounded-full animate-bounce transform -translate-x-1/2" style={{ animationDelay: '0.2s' }}></div>
-                        <div className="absolute top-12 left-1/2 w-2 h-2 bg-white/50 rounded-full animate-bounce transform -translate-x-1/2" style={{ animationDelay: '0.4s' }}></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Destination */}
-                  <div className="flex justify-center">
-                    <div className="bg-white/20 rounded-xl p-6 text-center max-w-md">
-                      {/* Journey Illustration */}
-                      <div className="flex justify-center mb-8 mt-20">
-                        <div className="w-full max-w-4xl">
-                          <img
-                            src="/lovable-uploads/d84740b3-408d-4094-8d87-2f2548fb1029.png"
-                            alt="Journey from hotels to venue"
-                            className="w-full h-auto opacity-90 filter brightness-110"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <h4 className="text-white font-semibold text-xl mb-2">Finca El Regajal</h4>
-                      <p className="text-white/80 text-sm mb-4">Lugar de la celebración</p>
+                  {/* Right Image - Destination */}
+                  <div className="flex flex-col items-center h-full">
+                    <img
+                      src={destinationTreeImage}
+                      alt="Destination - Venue"
+                      className="w-full h-auto max-h-64 object-contain rounded-lg opacity-90"
+                      loading="lazy"
+                    />
+                    <div className="mt-4 text-center flex-1 flex flex-col justify-center">
+                      <h4 className="text-white font-semibold text-lg mb-2">Lugar de la Celebración</h4>
+                      <h5 className="text-white font-medium">Finca El Regajal</h5>
                       <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
                         <Button
                           variant="outline"
+                          size="sm"
                           className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
                         >
                           📍 Ver Ubicación Final
@@ -406,16 +379,16 @@ const ChristmasWedding = () => {
                       </a>
                     </div>
                   </div>
+                </div>
 
-                  {/* Journey info */}
-                  <div className="mt-8 text-center">
-                    <p className="text-white/70 text-sm">
-                      ⏱️ Duración aproximada del viaje: 15-20 minutos
-                    </p>
-                    <p className="text-white/70 text-xs mt-2">
-                      *Es necesario confirmar el transporte mediante el formulario
-                    </p>
-                  </div>
+                {/* Journey info */}
+                <div className="mt-8 text-center">
+                  <p className="text-white/70 text-sm">
+                    ⏱️ Duración aproximada del viaje: 15-20 minutos
+                  </p>
+                  <p className="text-white/70 text-xs mt-2">
+                    *Es necesario confirmar el transporte mediante el formulario
+                  </p>
                 </div>
               </div>
             </CardContent>
