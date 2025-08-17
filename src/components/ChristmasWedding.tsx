@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useToast } from '@/hooks/use-toast';
-import { Heart, Snowflake} from 'lucide-react';
+import { Heart, Snowflake } from 'lucide-react';
 import titleImage from '../assets/title.png';
 import coverImage from '../assets/cover.png';
 import bimbaFarewell from '../assets/bimba-os-esperamos.png';
@@ -96,14 +96,14 @@ const ChristmasWedding = () => {
           childMenu: formData.childMenu,
           subject: `RSVP de ${formData.name} - Boda Rocío & Jorge`,
           timestamp: new Date().toLocaleString('es-ES', {
-              year: '2-digit',
-              month: '2-digit',
-              day: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit',
-              second: '2-digit',
-              hour12: false
-            }).replace(',', ''),
+            year: '2-digit',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          }).replace(',', ''),
         }),
       });
 
