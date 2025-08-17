@@ -13,21 +13,55 @@ import bimbaFarewell from '../assets/bimba-os-esperamos.png';
 import timelineImage from '../assets/timeline.png';
 import originBusImage from '../assets/origin_bus.png';
 import destinationTreeImage from '../assets/destination_tree.png';
+import { attendees } from '../data/attendees';
 // using uploaded illustration path
 
 const ChristmasWedding = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
-    companion: '',
     transport: '',
     allergies: '',
-    attending: ''
+    childrenCount: '',
+    childChairs: '',
+    childMenu: ''
   });
   const [isLoading, setIsLoading] = useState(false);
 
+  // Search functionality
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredAttendees, setFilteredAttendees] = useState<string[]>([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // Filter attendees based on search term (case insensitive)
+  const handleSearch = (value: string) => {
+    setSearchTerm(value);
+    if (value.trim() === '') {
+      setFilteredAttendees([]);
+      setShowDropdown(false);
+    } else {
+      const filtered = attendees.filter(name =>
+        name.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredAttendees(filtered);
+      setShowDropdown(filtered.length > 0);
+    }
+  };
+
+  // Select an attendee from the dropdown
+  const selectAttendee = (name: string) => {
+    setFormData(prev => ({ ...prev, name }));
+    setSearchTerm(name);
+    setFilteredAttendees([]);
+    setShowDropdown(false);
+  };
+
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    if (field === 'name') {
+      handleSearch(value);
+    } else {
+      setFormData(prev => ({ ...prev, [field]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -75,7 +109,10 @@ const ChristmasWedding = () => {
           companion: '',
           transport: '',
           allergies: '',
-          attending: ''
+          attending: '',
+          childrenCount: '',
+          childChairs: '',
+          childMenu: ''
         });
       } else {
         throw new Error('Error al enviar confirmación');
@@ -157,7 +194,7 @@ const ChristmasWedding = () => {
             <li><a href="https://www.booking.com/Share-EuBSI2" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Royal Retreat Aranjuez</a></li>
           </ul>
           <p className="text-sm text-muted-foreground italic text-left">
-            *** El <b>Hotel NH Collection Palacio de Aranjuez</b> solo se puede reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros.
+            *** El <b>Hotel NH Collection Palacio de Aranjuez</b> solo se permite reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros.
           </p>
         </div>
       )
@@ -374,7 +411,7 @@ const ChristmasWedding = () => {
                           size="sm"
                           className="border-white text-white hover:bg-white hover:text-red-900 transition-colors bg-white/10"
                         >
-                          📍 Ver Ubicación Final
+                          📍 Ver en Maps
                         </Button>
                       </a>
                     </div>
@@ -384,7 +421,7 @@ const ChristmasWedding = () => {
                 {/* Journey info */}
                 <div className="mt-8 text-center">
                   <p className="text-white/70 text-sm">
-                    ⏱️ Duración aproximada del viaje: 15-20 minutos
+                    ⏱️ Duración aproximada del viaje: 10 minutos
                   </p>
                   <p className="text-white/70 text-xs mt-2">
                     *Es necesario confirmar el transporte mediante el formulario
@@ -445,38 +482,41 @@ const ChristmasWedding = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
-              <div>
+              <div className="relative">
                 <Label htmlFor="name" className="text-christmas-forest font-medium">
                   Nombre y Apellidos
                 </Label>
                 <Input
                   id="name"
-                  value={formData.name}
+                  value={searchTerm}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="mt-1 border-christmas-gold/50 focus:border-christmas-forest"
-                  placeholder="Tu nombre completo"
+                  className="text-christmas-forest font-medium border-christmas-gold/50 focus:border-christmas-forest"
+                  placeholder="Busca tu nombre..."
+                  required
                 />
-              </div>
 
-              <div>
-                <Label htmlFor="companion" className="text-christmas-forest font-medium">
-                  Nombre del Acompañante (opcional)
-                </Label>
-                <Input
-                  id="companion"
-                  value={formData.companion}
-                  onChange={(e) => handleInputChange('companion', e.target.value)}
-                  className="mt-1 border-christmas-gold/50 focus:border-christmas-forest"
-                  placeholder="Nombre de tu acompañante"
-                />
+                {/* Dropdown with filtered attendees */}
+                {showDropdown && filteredAttendees.length > 0 && (
+                  <div className="absolute z-10 w-full mt-1 bg-white border border-christmas-gold/30 rounded-md shadow-lg max-h-48 overflow-auto">
+                    {filteredAttendees.map((name, index) => (
+                      <div
+                        key={index}
+                        className="px-4 py-2 hover:bg-christmas-gold/10 cursor-pointer border-b border-christmas-gold/20 last:border-b-0"
+                        onClick={() => selectAttendee(name)}
+                      >
+                        <span className="text-christmas-forest font-medium">{name}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div>
                 <Label className="text-christmas-forest font-medium">
-                  ¿Necesitas transporte?
+                  ¿Necesitas transporte desde Aranjuez a la finca?
                 </Label>
                 <div className="mt-2 space-y-2">
-                  {['Sí, necesito transporte', 'No, iré por mi cuenta'].map((option) => (
+                  {['Sí, necesito transporte desde el Hotel NH Collection', 'Sí, necesito transporte desde el Hotel Equo', 'No, iré por mi cuenta'].map((option) => (
                     <label key={option} className="flex items-center gap-3 cursor-pointer">
                       <input
                         type="radio"
@@ -485,6 +525,7 @@ const ChristmasWedding = () => {
                         checked={formData.transport === option}
                         onChange={(e) => handleInputChange('transport', e.target.value)}
                         className="text-christmas-forest focus:ring-christmas-forest"
+                        required
                       />
                       <span className="text-sm text-christmas-forest">{option}</span>
                     </label>
@@ -492,6 +533,7 @@ const ChristmasWedding = () => {
                 </div>
               </div>
 
+              {/* Allergies Subsection */}
               <div>
                 <Label htmlFor="allergies" className="text-christmas-forest font-medium">
                   Alergias o Restricciones Alimentarias
@@ -506,12 +548,86 @@ const ChristmasWedding = () => {
                 />
               </div>
 
+              {/* Children Subsection */}
+              <div className="border-t border-christmas-gold/30 mt-2">
+                <h3 className="text-lg font-semibold text-christmas-forest mb-4">
+                  👶 Información sobre Niños
+                </h3>
+
+                <p className="text-sm text-muted-foreground italic text-left pb-6">
+                  Por favor, solo rellenar esta sección por uno de los padres.
+                </p>
+
+                <div className="space-y-4">
+                  {/* Number of Children */}
+                  <div>
+                    <Label htmlFor="childrenCount" className="text-christmas-forest font-medium">
+                      ¿Cuántos niños asistirán?
+                    </Label>
+                    <select
+                      id="childrenCount"
+                      value={formData.childrenCount}
+                      onChange={(e) => handleInputChange('childrenCount', e.target.value)}
+                      className="mt-1 w-full border border-christmas-gold/50 focus:border-christmas-forest rounded-md px-3 py-2 bg-white text-christmas-forest font-medium"
+                    >
+                      <option value="">Selecciona el número</option>
+                      <option value="0">0 - No hay niños</option>
+                      <option value="1">1 niño</option>
+                      <option value="2">2 niños</option>
+                      <option value="3">3 niños</option>
+                      <option value="4">4 niños</option>
+                      <option value="5+">5 o más niños</option>
+                    </select>
+                  </div>
+
+                  {/* Child Chairs */}
+                  {formData.childrenCount && formData.childrenCount !== '0' && (
+                    <div>
+                      <Label htmlFor="childChairs" className="text-christmas-forest font-medium">
+                        ¿Cuántas tronas de niño necesitas?
+                      </Label>
+                      <select
+                        id="childChairs"
+                        value={formData.childChairs}
+                        onChange={(e) => handleInputChange('childChairs', e.target.value)}
+                        className="mt-1 w-full border border-christmas-gold/50 focus:border-christmas-forest rounded-md px-3 py-2 bg-white text-christmas-forest font-medium"
+                      >
+                        <option value="">Selecciona el número</option>
+                        {[...Array(parseInt(formData.childrenCount) + 1)].map((_, i) => (
+                          <option key={i} value={i}>{i} trona{i !== 1 ? 's' : ''}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+
+                  {/* Child Chairs */}
+                  {formData.childrenCount && formData.childrenCount !== '0' && (
+                    <div>
+                      <Label htmlFor="childChairs" className="text-christmas-forest font-medium">
+                        ¿Cuántos menús infantiles necesitas?
+                      </Label>
+                      <select
+                        id="childMenu"
+                        value={formData.childMenu}
+                        onChange={(e) => handleInputChange('childMenu', e.target.value)}
+                        className="mt-1 w-full border border-christmas-gold/50 focus:border-christmas-forest rounded-md px-3 py-2 bg-white text-christmas-forest font-medium"
+                      >
+                        <option value="">Selecciona el número</option>
+                        {[...Array(parseInt(formData.childrenCount) + 1)].map((_, i) => (
+                          <option key={i} value={i}>{i} menú{i !== 1 ? 's' : ''} infantil{i !== 1 ? 'es' : ''}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+                </div>
+              </div>
+
               <Button
                 type="submit"
                 disabled={isLoading}
                 className="w-full bg-christmas-forest hover:bg-christmas-pine text-christmas-champagne text-lg py-3 disabled:opacity-50"
               >
-                {isLoading ? 'Enviando...' : 'Confirmar Asistencia 🎄'}
+                {isLoading ? 'Enviando...' : 'Confirmar o Actualizar Asistencia 🎄'}
               </Button>
             </form>
           </CardContent>
