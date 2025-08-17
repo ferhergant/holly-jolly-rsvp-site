@@ -312,73 +312,118 @@ const ChristmasWedding = () => {
                 Celebración & Transporte
               </h2>
 
-              {/* Journey Layout */}
+              {/* Journey Visualization */}
               <div className="max-w-6xl mx-auto">
-                {/* Origins Section */}
-                <div className="mb-8">
-                  <h3 className="text-xl text-white/90 text-center mb-6 font-serif">Puntos de Salida</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                  
+                  {/* Origins - Hotels */}
+                  <div className="grid md:grid-cols-2 gap-8 mb-8">
                     {/* Hotel NH */}
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                      <h4 className="text-white font-semibold mb-3">Hotel NH Collection</h4>
-                      <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
-                        >
-                          Ver en Google Maps
-                        </Button>
-                      </a>
+                    <div className="relative flex flex-col items-center">
+                      <div className="bg-white/20 rounded-lg p-4 text-center mb-4 min-h-[100px] flex flex-col justify-center">
+                        <h4 className="text-white font-semibold text-lg mb-2">Hotel NH Collection</h4>
+                        <a href="https://maps.app.goo.gl/cR1RpVGzxFvWBRVt6" target="_blank" rel="noopener noreferrer">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                          >
+                            📍 Ver en Maps
+                          </Button>
+                        </a>
+                      </div>
+                      {/* Animated path from hotel */}
+                      <div className="hidden md:block absolute top-full left-1/2 w-0.5 h-16 bg-white/40">
+                        <div className="absolute top-0 left-1/2 w-2 h-2 bg-white rounded-full animate-pulse transform -translate-x-1/2"></div>
+                      </div>
                     </div>
                     
                     {/* Hotel Equo */}
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                      <h4 className="text-white font-semibold mb-3">Hotel Equo</h4>
-                      <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
+                    <div className="relative flex flex-col items-center">
+                      <div className="bg-white/20 rounded-lg p-4 text-center mb-4 min-h-[100px] flex flex-col justify-center">
+                        <h4 className="text-white font-semibold text-lg mb-2">Hotel Equo</h4>
+                        <a href="https://maps.app.goo.gl/2WrX8GyhxVysUqWE9" target="_blank" rel="noopener noreferrer">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
+                          >
+                            📍 Ver en Maps
+                          </Button>
+                        </a>
+                      </div>
+                      {/* Animated path from hotel */}
+                      <div className="hidden md:block absolute top-full left-1/2 w-0.5 h-16 bg-white/40">
+                        <div className="absolute top-0 left-1/2 w-2 h-2 bg-white rounded-full animate-pulse transform -translate-x-1/2"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Convergence point - Bus Transport */}
+                  <div className="flex justify-center mb-8">
+                    <div className="relative">
+                      {/* Horizontal connecting lines */}
+                      <div className="hidden md:block absolute -top-16 left-1/2 transform -translate-x-1/2">
+                        <div className="flex items-center justify-center">
+                          <div className="w-32 h-0.5 bg-white/40 transform rotate-12"></div>
+                          <div className="w-32 h-0.5 bg-white/40 transform -rotate-12 -ml-16"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Bus illustration container */}
+                      <div className="bg-white/20 rounded-full p-6 mb-4">
+                        <div className="text-4xl">🚌</div>
+                      </div>
+                      <p className="text-white/90 text-center text-sm font-medium">
+                        Transporte Disponible
+                      </p>
+                      
+                      {/* Vertical path to destination */}
+                      <div className="absolute top-full left-1/2 w-0.5 h-20 bg-white/40">
+                        <div className="absolute top-4 left-1/2 w-2 h-2 bg-white rounded-full animate-bounce transform -translate-x-1/2"></div>
+                        <div className="absolute top-8 left-1/2 w-2 h-2 bg-white/70 rounded-full animate-bounce transform -translate-x-1/2" style={{animationDelay: '0.2s'}}></div>
+                        <div className="absolute top-12 left-1/2 w-2 h-2 bg-white/50 rounded-full animate-bounce transform -translate-x-1/2" style={{animationDelay: '0.4s'}}></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Journey Illustration */}
+                  <div className="flex justify-center mb-8 mt-20">
+                    <div className="w-full max-w-4xl">
+                      <img
+                        src="/lovable-uploads/d84740b3-408d-4094-8d87-2f2548fb1029.png"
+                        alt="Journey from hotels to venue"
+                        className="w-full h-auto opacity-90 filter brightness-110"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Destination */}
+                  <div className="flex justify-center">
+                    <div className="bg-white/20 rounded-xl p-6 text-center max-w-md">
+                      <div className="text-3xl mb-3">🏰</div>
+                      <h4 className="text-white font-semibold text-xl mb-2">Finca El Regajal</h4>
+                      <p className="text-white/80 text-sm mb-4">Lugar de la celebración</p>
+                      <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
                         <Button
                           variant="outline"
-                          size="sm"
                           className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
                         >
-                          Ver en Google Maps
+                          📍 Ver Ubicación Final
                         </Button>
                       </a>
                     </div>
                   </div>
-                </div>
 
-                {/* Journey Illustration */}
-                <div className="flex flex-col items-center my-8">
-                  <div className="w-full max-w-4xl">
-                    <img
-                      src="/lovable-uploads/d84740b3-408d-4094-8d87-2f2548fb1029.png"
-                      alt="Journey from hotels to venue"
-                      className="w-full h-auto opacity-90 filter brightness-110"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="mt-4 text-center">
-                    <p className="text-white/80 text-sm">
-                      🚌 Transporte disponible desde ambos hoteles
+                  {/* Journey info */}
+                  <div className="mt-8 text-center">
+                    <p className="text-white/70 text-sm">
+                      ⏱️ Duración aproximada del viaje: 15-20 minutos
                     </p>
-                  </div>
-                </div>
-
-                {/* Destination Section */}
-                <div className="text-center">
-                  <h3 className="text-xl text-white/90 mb-6 font-serif">Destino</h3>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-md mx-auto">
-                    <h4 className="text-white font-semibold mb-3 text-lg">Finca El Regajal</h4>
-                    <p className="text-white/80 text-sm mb-4">Lugar de la celebración</p>
-                    <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
-                      <Button
-                        variant="outline"
-                        className="border-white/60 text-white hover:bg-white hover:text-red-900 transition-colors"
-                      >
-                        Ver Ubicación en Maps
-                      </Button>
-                    </a>
+                    <p className="text-white/70 text-xs mt-2">
+                      *Es necesario confirmar el transporte mediante el formulario
+                    </p>
                   </div>
                 </div>
               </div>
