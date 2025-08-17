@@ -315,7 +315,7 @@ const ChristmasWedding = () => {
               {/* Journey Visualization */}
               <div className="max-w-6xl mx-auto">
                 <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                  
+
                   {/* Origins - Hotels */}
                   <div className="grid md:grid-cols-2 gap-8 mb-8">
                     {/* Hotel NH */}
@@ -337,7 +337,7 @@ const ChristmasWedding = () => {
                         <div className="absolute top-0 left-1/2 w-2 h-2 bg-white rounded-full animate-pulse transform -translate-x-1/2"></div>
                       </div>
                     </div>
-                    
+
                     {/* Hotel Equo */}
                     <div className="relative flex flex-col items-center">
                       <div className="bg-white/20 rounded-lg p-4 text-center mb-4 min-h-[100px] flex flex-col justify-center">
@@ -369,40 +369,31 @@ const ChristmasWedding = () => {
                           <div className="w-32 h-0.5 bg-white/40 transform -rotate-12 -ml-16"></div>
                         </div>
                       </div>
-                      
-                      {/* Bus illustration container */}
-                      <div className="bg-white/20 rounded-full p-6 mb-4">
-                        <div className="text-4xl">🚌</div>
-                      </div>
-                      <p className="text-white/90 text-center text-sm font-medium">
-                        Transporte Disponible
-                      </p>
-                      
+
+
                       {/* Vertical path to destination */}
                       <div className="absolute top-full left-1/2 w-0.5 h-20 bg-white/40">
                         <div className="absolute top-4 left-1/2 w-2 h-2 bg-white rounded-full animate-bounce transform -translate-x-1/2"></div>
-                        <div className="absolute top-8 left-1/2 w-2 h-2 bg-white/70 rounded-full animate-bounce transform -translate-x-1/2" style={{animationDelay: '0.2s'}}></div>
-                        <div className="absolute top-12 left-1/2 w-2 h-2 bg-white/50 rounded-full animate-bounce transform -translate-x-1/2" style={{animationDelay: '0.4s'}}></div>
+                        <div className="absolute top-8 left-1/2 w-2 h-2 bg-white/70 rounded-full animate-bounce transform -translate-x-1/2" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="absolute top-12 left-1/2 w-2 h-2 bg-white/50 rounded-full animate-bounce transform -translate-x-1/2" style={{ animationDelay: '0.4s' }}></div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Journey Illustration */}
-                  <div className="flex justify-center mb-8 mt-20">
-                    <div className="w-full max-w-4xl">
-                      <img
-                        src="/lovable-uploads/d84740b3-408d-4094-8d87-2f2548fb1029.png"
-                        alt="Journey from hotels to venue"
-                        className="w-full h-auto opacity-90 filter brightness-110"
-                        loading="lazy"
-                      />
                     </div>
                   </div>
 
                   {/* Destination */}
                   <div className="flex justify-center">
                     <div className="bg-white/20 rounded-xl p-6 text-center max-w-md">
-                      <div className="text-3xl mb-3">🏰</div>
+                      {/* Journey Illustration */}
+                      <div className="flex justify-center mb-8 mt-20">
+                        <div className="w-full max-w-4xl">
+                          <img
+                            src="/lovable-uploads/d84740b3-408d-4094-8d87-2f2548fb1029.png"
+                            alt="Journey from hotels to venue"
+                            className="w-full h-auto opacity-90 filter brightness-110"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
                       <h4 className="text-white font-semibold text-xl mb-2">Finca El Regajal</h4>
                       <p className="text-white/80 text-sm mb-4">Lugar de la celebración</p>
                       <a href="https://maps.app.goo.gl/NLUJexwxn4bhe7EY6" target="_blank" rel="noopener noreferrer">
