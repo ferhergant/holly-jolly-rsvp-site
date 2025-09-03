@@ -202,12 +202,12 @@ const ChristmasWedding = () => {
       answer: (
         <div>
           <ul className="list-disc list-inside space-y-2 text-left mb-4">
-            <li><a href="https://www.booking.com/Share-dZ96NhA" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">NH Collection Palacio de Aranjuez</a><a>***</a></li>
+            <li><a href="https://www.booking.com/Share-dZ96NhA" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">NH Collection Palacio de Aranjuez</a><a>*</a></li>
             <li><a href="https://www.booking.com/Share-599LpH" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Hotel Equo Aranjuez</a></li>
             <li><a href="https://www.booking.com/Share-EuBSI2" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Royal Retreat Aranjuez</a></li>
           </ul>
           <p className="text-sm text-muted-foreground italic text-left">
-            *** El <b>Hotel NH Collection Palacio de Aranjuez</b> solo se permite reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros.
+            * El <b>Hotel NH Collection Palacio de Aranjuez</b> solo se permite reservar 2 noches por Booking. Si queréis reservar solo una noche, contactar con nosotros.
           </p>
         </div>
       )
@@ -227,7 +227,7 @@ const ChristmasWedding = () => {
           {createRestaurantEntry(
             "Restaurante Almíbar",
             "https://maps.app.goo.gl/Smed8a3KxxzGRRfY6",
-            "Comida tradicional española cercana al Hotel Equo",
+            "Comida tradicional española cercano al Hotel Equo",
             "€€€",
             "info",
             "https://www.instagram.com/restaurantealmibar?igsh=YnE3Y25iNG5nbmlj"
@@ -256,11 +256,11 @@ const ChristmasWedding = () => {
       answer: (
         <ul className="list-disc list-inside space-y-2 text-left">
           <li><a href="https://maps.app.goo.gl/ccR2NYq32gQQmyP1A" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Centro de Estetica Almibar en Aranjuez</a>
-            <a>. Estética y maquillaje profesional</a></li>
+            <a>. Estética y maquillaje profesional. Confirmad apertura y horarios.</a></li>
           <li><a href="https://maps.app.goo.gl/inrou13XepBKqnAi6" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">RC Peluqueros y Estilistas</a>
-            <a>. Peluquería y estilismo profesional</a></li>
+            <a>. Peluquería y estilismo profesional. Confirmad apertura y horarios.</a></li>
           <li><a href="https://maps.app.goo.gl/LJWRD86ETGc3Gisd8" target="_blank" rel="noopener noreferrer" className="text-christmas-forest hover:text-christmas-burgundy underline">Chic’s Peluqueros</a>
-            <a>. Peluquería</a></li>
+            <a>. Peluquería. Confirmad apertura y horarios.</a></li>
         </ul>
       )
     },
@@ -377,7 +377,7 @@ const ChristmasWedding = () => {
                       loading="lazy"
                     />
                     <div className="mt-4 text-center flex-1 flex flex-col justify-center">
-                      <h4 className="text-white font-semibold text-lg mb-4">Paradas de Autobús</h4>
+                      <h4 className="text-white font-semibold text-lg mb-4">Puntos de parada de autobús*</h4>
                       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <div className="text-center">
                           <h5 className="text-white font-medium mb-3">Hotel NH Collection</h5>
@@ -693,7 +693,7 @@ const ChristmasWedding = () => {
 
             <div className="mt-8 text-center">
               <p className="text-sm text-muted-foreground">
-                ¡Estamos deseando que nos acompañes en este día tan especial!
+                ¡Estamos deseando que nos acompañeis en este día tan especial!
               </p>
               <div className="flex justify-center mt-4 gap-2">
                 <Heart className="w-4 h-4 text-christmas-burgundy" />
