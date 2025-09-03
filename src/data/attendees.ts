@@ -1,5 +1,6 @@
 // List of wedding attendees
 export const attendees = [
+  "",
   "ROCIO GALAN",
   "KOKE MORENO",
   "EMMA MORENO",
@@ -180,15 +181,3 @@ export const attendees = [
   "MARIBEL CARRASCO",
   "YOLANDA MEGIAS"
 ];
-
-// You can add more attendees to this list as needed
-// export const attendees = [
-//   'Fernando',
-//   'Ana',
-//   'Mariola', 
-//   'Marta',
-//   'Carlos',
-//   'Sofia',
-//   'Miguel',
-//   'Isabella'
-// ];

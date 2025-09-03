@@ -20,6 +20,7 @@ const ChristmasWedding = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     transport: '',
     allergies: '',
     childrenCount: '',
@@ -88,6 +89,7 @@ const ChristmasWedding = () => {
         },
         body: JSON.stringify({
           name: formData.name,
+          email: formData.email,
           transport: formData.transport,
           allergies: formData.allergies,
           childrenCount: formData.childrenCount,
@@ -117,6 +119,7 @@ const ChristmasWedding = () => {
         // Reset form
         setFormData({
           name: '',
+          email: '',
           transport: '',
           allergies: '',
           childrenCount: '',
@@ -493,6 +496,20 @@ const ChristmasWedding = () => {
 
             <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
               <div className="relative">
+
+                <Label htmlFor="name" className="text-christmas-forest font-medium">
+                  Email de confirmación
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className="text-christmas-forest font-medium border-christmas-gold/50 focus:border-christmas-forest"
+                  placeholder="tu@email.com"
+                  required
+                />
+
                 <Label htmlFor="name" className="text-christmas-forest font-medium">
                   Nombre y Apellidos
                 </Label>
