@@ -669,6 +669,13 @@ const ChristmasWedding = () => {
                 </div>
               </div>
 
+              <div className="text-sm text-muted-foreground bg-christmas-champagne/20 p-3 rounded-lg border border-christmas-gold/30">
+                <p className="text-center">
+                  📧 <strong>Nota importante:</strong> Después de enviar tu confirmación, deberías recibir un email de confirmación. 
+                  Si no lo recibes en unos minutos, por favor inténtalo de nuevo o contáctanos directamente.
+                </p>
+              </div>
+
               <Button
                 type="submit"
                 disabled={isLoading}
