@@ -82,7 +82,7 @@ const ChristmasWedding = () => {
 
     try {
       // Using Pipedream endpoint
-      const response = await fetch('https://eolpxah866aycv0.m.pipedream.net', {
+      const response = await fetch('https://webhook.latenode.com/77030/prod/21ceeda7-e1b1-4e7c-b946-1213d8a56748', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
