@@ -188,5 +188,6 @@ export const attendees = [
   "JAVIER TADEO",
   "SONIA ENCINAR",
   "PEDRO MUÑOZ",
-  "MARIA LOPEZ"
+  "MARIA LOPEZ",
+  "ENRIQUE RODRIGUEZ RUBIO"
 ];
