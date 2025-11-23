@@ -21,7 +21,7 @@ const ChristmasWedding = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    transport: '',
+    transport: 'No, iré por mi cuenta',
     allergies: '',
     childrenCount: '',
     childChairs: '',
@@ -542,9 +542,32 @@ const ChristmasWedding = () => {
                 <Label className="text-christmas-forest font-medium">
                   ¿Necesitas transporte desde Aranjuez a la finca?
                 </Label>
+
+                {/* Info Message */}
+                <div className="mt-2 mb-4 relative overflow-hidden rounded-lg bg-gradient-to-r from-christmas-champagne/30 via-christmas-gold/20 to-christmas-champagne/30 border border-christmas-gold/40 shadow-sm">
+                  <div className="absolute inset-0 bg-white/60"></div>
+                  <div className="relative p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-christmas-burgundy/15 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-christmas-burgundy" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-christmas-forest font-semibold text-sm mb-1.5 flex items-center gap-2">
+                          🚌 Transporte con plazas limitadas
+                        </h4>
+                        <p className="text-christmas-forest/85 text-sm leading-relaxed">
+                          Si necesitas transporte desde los hoteles, <span className="font-medium text-christmas-burgundy">contacta directamente con los novios</span> para verificar disponibilidad de plazas.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="mt-2 space-y-2">
                   {['Sí, necesito transporte desde el Hotel NH Collection', 'Sí, necesito transporte desde el Hotel Equo', 'No, iré por mi cuenta'].map((option) => (
-                    <label key={option} className="flex items-center gap-3 cursor-pointer">
+                    <label key={option} className={`flex items-center gap-3 ${option.startsWith('Sí') ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}`}>
                       <input
                         type="radio"
                         name="transport"
@@ -553,6 +576,7 @@ const ChristmasWedding = () => {
                         onChange={(e) => handleInputChange('transport', e.target.value)}
                         className="text-christmas-forest focus:ring-christmas-forest"
                         required
+                        disabled={option.startsWith('Sí')}
                       />
                       <span className="text-sm text-christmas-forest">{option}</span>
                     </label>
@@ -671,7 +695,7 @@ const ChristmasWedding = () => {
 
               <div className="text-sm text-muted-foreground bg-christmas-champagne/20 p-3 rounded-lg border border-christmas-gold/30">
                 <p className="text-center">
-                  📧 <strong>Nota importante:</strong> Después de enviar tu confirmación, deberías recibir un email de confirmación. 
+                  📧 <strong>Nota importante:</strong> Después de enviar tu confirmación, deberías recibir un email de confirmación.
                   Si no lo recibes en unos minutos, por favor inténtalo de nuevo o contáctanos directamente.
                 </p>
               </div>
@@ -711,7 +735,7 @@ const ChristmasWedding = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </div >
   );
 };
 
